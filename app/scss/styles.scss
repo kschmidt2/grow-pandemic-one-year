@@ -22,7 +22,7 @@ $breakpoint-lg: 717px;
 
 @import "colors";
 
-.chart-area-PROJECT-NAME { // add the proper class here
+.chart-area-pandemic-one-year { // add the proper class here
 
   // type styles
 
@@ -43,9 +43,10 @@ $breakpoint-lg: 717px;
       font-size: 14px;
       // bottom margin should be 10px if there is no legend, or if the legend runs into the chart title
       margin-bottom: 10px;
+      max-width: 560px;
       @include sm-md-xl {
           // set this only if there is a chart title + legend
-          margin-bottom: -33px;
+          // margin-bottom: -33px;
       }
   }
 
@@ -67,7 +68,7 @@ $breakpoint-lg: 717px;
       text-transform: uppercase;
       color: $slate-secondary-5;
       letter-spacing: 1px;
-      width: 65%;
+      width: 100%;
       @include sm-md-xl {
           width: 80%;
           font-size: 10px;
@@ -88,6 +89,9 @@ $breakpoint-lg: 717px;
           content: "Source: ";
       }
       float: left;
+      @include x-small() {
+        margin-bottom: 10px;
+      }
       @include sm-md-xl {
           float: none;
           } 
@@ -146,13 +150,288 @@ $breakpoint-lg: 717px;
     margin-top: 20px;
   }
 
-  .highcharts-yaxis-labels {
-    // use this to change the axis label
-    & span:first-child {
-      // transform: translate(10px,0) !important;
-      &:after {
-        content: "%";
+  // .highcharts-yaxis-labels {
+  //   // use this to change the axis label
+  //   & span:first-child {
+  //     // transform: translate(10px,0) !important;
+  //     &:after {
+  //       content: "%";
+  //   }
+  //   }
+  // }
+
+  & #chart-container-pandemic-one-year-1, #chart-container-pandemic-one-year-8 {
+    height: 400px;
+    @include x-small {
+      height: 420px;
     }
+
+    .highcharts-color-0 {
+      fill: $green-secondary-5;
+      stroke: $green-secondary-5;
+    }
+    
+    .highcharts-color-1 {
+      fill: $slate-secondary-3;
+      stroke: $slate-secondary-3;
+    }
+    
+    .highcharts-color-2 {
+      fill: $green-secondary-3;
+      stroke: $green-secondary-3;
+    }
+    
+    .highcharts-color-3 {
+      fill: $green-secondary-5;
+      stroke: $green-secondary-5;
+      stroke-dasharray: 5;
+    }
+
+    .highcharts-color-4 {
+      fill: $slate-secondary-3;
+      stroke: $slate-secondary-3;
+      stroke-dasharray: 5;
+    }
+
+    .highcharts-color-5 {
+      fill: $green-secondary-3;
+      stroke: $green-secondary-3;
+      stroke-dasharray: 5;
+    }
+
+    .highcharts-axis-line {
+      fill: none;
+      stroke: none;
+    }
+
+    .highcharts-yaxis-grid {
+      & path:nth-child(5) {
+        stroke: $slate-secondary-5;
+      }
+    }
+
+    .highcharts-legend-item {
+      &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+        display: none;
+      }
+    }
+
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:last-child {
+        transform: translate(10px,0) !important;
+        &:after {
+          content: "%";
+      }
+      }
+    }
+    
+  }
+
+  & #chart-container-pandemic-one-year-2, & #chart-container-pandemic-one-year-4 {
+    .highcharts-color-0 {
+      fill: $slate-secondary-3;
+      stroke: $slate-secondary-3;
+    }
+    .highcharts-color-1 {
+      fill: $purple-primary;
+      stroke: $purple-primary;
+    }
+    .highcharts-color-2 {
+      fill: $green-primary;
+      stroke: $green-primary;
+    }
+    .highcharts-series.highcharts-color-0 rect {
+      &:last-child {
+        fill: darken($slate-secondary-2,8%);
+        stroke: darken($slate-secondary-2,8%);
+      }
+    }
+    .highcharts-series.highcharts-color-1 rect {
+      &:last-child {
+        fill: $purple-secondary-2;
+        stroke: $purple-secondary-2;
+      }
+    }
+    .highcharts-series.highcharts-color-2 rect {
+      &:last-child {
+        fill: $green-secondary-2;
+        stroke: $green-secondary-2;
+      }
+    }
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:first-child {
+        &:after {
+          content: "%";
+      }
+      }
+    }
+  }
+
+  & #chart-container-pandemic-one-year-3 {
+    height: 350px;
+    @include x-small(){
+      height: 420px;
+    }
+
+    & .highcharts-axis {
+      & text {
+        font-size: 14px;
+        fill: $slate-secondary-5;
+      }
+    }
+  
+    & .highcharts-label {
+      path {
+        stroke: $slate-secondary-5;
+      }
+    }
+
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:last-child {
+        transform: translate(10px,0);
+        &:after {
+          content: "%";
+      }
+      }
+    }
+
+    .highcharts-axis-line {
+      fill: none;
+      stroke: none;
+    }
+
+    .highcharts-xaxis-grid .highcharts-grid-line {
+      stroke-width: 1px;
+    }
+
+    .highcharts-graph {
+      stroke-width: 2px;
+    }
+
+    .highcharts-color-0 {
+      fill: white;
+    }
+
+    .highcharts-point {
+      stroke-width: 1;
+    }
+  }
+
+
+  & #chart-container-pandemic-one-year-5 {
+    .highcharts-axis-line {
+      fill: none;
+      stroke: none;
+    }
+
+    .highcharts-yaxis-grid {
+      & path:nth-child(2) {
+        stroke: $slate-secondary-5;
+      }
+    }
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:last-child {
+        transform: translate(10px,0) !important;
+        &:after {
+          content: "%";
+      }
+      }
+    }
+  }
+
+  & #chart-container-pandemic-one-year-6 {
+    height: 350px;
+    .highcharts-axis-line {
+      fill: none;
+      stroke: none;
+    }
+
+    .highcharts-yaxis-grid {
+      & path:nth-child(5) {
+        stroke: $slate-secondary-5;
+      }
+    }
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:last-child {
+        transform: translate(10px,0) !important;
+        &:after {
+          content: "%";
+      }
+      }
+    }
+  }
+
+  & #chart-container-pandemic-one-year-7 {
+    .highcharts-lollipop-low {
+      fill: $slate-secondary-4;
+    stroke: $slate-secondary-4;
+    }
+
+    .highcharts-markers {
+      stroke-width: 1px;
+      stroke: #74c947;
+    }
+
+    .highcharts-yaxis-labels {
+      & span:last-child {
+        &:before {
+          content: "$";
+      }
+      }
+    }
+
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:last-child {
+        // transform: translate(0px,0) !important;
+        &:before {
+          content: "$";
+      }
+      }
+    }
+  }
+
+  & #chart-container-pandemic-one-year-9 {
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:last-child {
+        transform: translate(10px,0) !important;
+        &:after {
+          content: "%";
+      }
+      }
+    }
+  }
+
+  & #chart-container-pandemic-one-year-10 {
+    .highcharts-axis-line {
+      fill: none;
+      stroke: none;
+    }
+
+    .highcharts-yaxis-grid {
+      & path:nth-child(3) {
+        stroke: $slate-secondary-5;
+      }
+    }
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:last-child {
+        transform: translate(50px,0) !important;
+        background-color: white;
+      padding-right: 10px;
+        &:after {
+          content: " billion";
+      }
+      &:before {
+        content: "$";
+    }
+      }
     }
   }
 
